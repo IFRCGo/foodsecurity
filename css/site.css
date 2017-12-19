@@ -1,3 +1,10 @@
 .documenttitle {
 	margin-top:20px;
 }
+.card-section ul {
+	font-size: 14px;
+	list-style-type:disc; 
+	list-style-position:outside;
+	margin-left: 15px;
+}
+
