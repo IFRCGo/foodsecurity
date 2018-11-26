@@ -71,7 +71,7 @@ function loadKeyFigures(url){
 function createAppealsTable(data){
     var html = "";
     data.forEach(function(d,i){
-        var url = 'http://ifrcgo.org/appeals/'+d['#meta+id'].toLowerCase()
+        var url = 'https://ifrcgo.org/appeals/'+d['#meta+id'].toLowerCase()
         html += '<tr><td><a href="'+url+'" target="_blank">'+d['#crisis+name']+'</a></td><td>'+d['#date+start']+'</td><td>'+d['#date+end']+'</td><td style="text-align:right">'+niceFormatNumber(d['#targeted'])+'</td><td style="text-align:right">'+niceFormatNumber(d['#meta+value'])+'</td><td style="text-align:right">'+niceFormatNumber(d['#meta+funding'])+'</td><td id="coverage'+i+'"></td><td><a href="'+url+'" target="_blank">'+d['#meta+id']+'</a></td></tr>';
     });
     $('#appealstable').append(html);
@@ -149,7 +149,7 @@ $.ajax({
                 if(d['#meta+id']==a){
                     $('#appealname'+a).html(d['#meta+appealname']);
                     if(d['#meta+url'].substring(0,1)=='/'){
-                        d['#meta+url'] = 'http://www.ifrc.org'+d['#meta+url'];
+                        d['#meta+url'] = 'https://www.ifrc.org'+d['#meta+url'];
                     }
                     $('#documenttable'+a).append('<tr><td><a href="'+d['#meta+url']+'">'+d['#meta+documentname']+'</a></td><td>'+d['#country']+'</td><td>'+d['#date']+'</td></tr>');
                 }
